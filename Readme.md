@@ -30,7 +30,7 @@ Or - if that sounds too conservative - I could make James Gosling, the father of
  pretend it is a lightsaber in front of thousands of developers
  at the worlds biggest Java conference - in full Darth Vader cosplay.
 
-![JavaONE Community Keynote](./javaone.png)
+![JavaONE Community Keynote](./javaone.jpg)
 
 ## Prerequisites
 
