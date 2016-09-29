@@ -21,13 +21,16 @@ But what kind of developer would be able to resist the temptations of a hackable
  device luring in the bathroom cabinet for long? Just imagine the possibilities! 
 
 I could 
-create a toothrush activated smart mirror that displays Minions to motivate little children 
+create a toothrush activated smart mirror that reacts on toothbrush status to motivate users 
 to brush their teeth (this project here). 
+
+![Image of Smart Mirror](./toothbrush.png)
 
 Or - if that sounds too conservative - I could make James Gosling, the father of Java, 
  pretend it is a lightsaber in front of thousands of developers
  at the worlds biggest Java conference - in full Darth Vader cosplay.
 
+![JavaONE Community Keynote](./javaone.png)
 
 ## Prerequisites
 
