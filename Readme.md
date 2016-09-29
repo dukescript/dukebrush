@@ -1,6 +1,6 @@
 # DukeBrush
 
-This is demo project shows, how you can use native libraries in a DukeScript application for Android.
+This demo project shows how you can use native libraries in a DukeScript application for Android.
 The native API we're using is the [Oral B API](https://developer.oralb.com/). It allows
 you to connect via Bluetooth LE to a toothbrush and to receive updates about brushing time, pressure
 and the sector you're supposed to brush.
@@ -9,8 +9,12 @@ and the sector you're supposed to brush.
 
 I first discovered this API in my Twitter timeline. There's a twitter account that I follow
 named @InternetOfShit. It is a reliable and steady source of fun. When I first 
-read that there's an API for my personal cloud connected toothbrush, I was delighted. But initially
- I only had some innocent fun chatting with my friends at Oracle about
+read that there's an API for my personal cloud connected toothbrush, I was delighted.
+
+![Image of InternetOfShit](./ios.png)
+
+Initially
+ I only had some innocent fun chatting withsome of my friends at Oracle about
  the dangers of mixing up "Oral B"- and "Oracle"-cloud. 
 
 But what kind of developer would be able to resist the temptations of a hackable
@@ -22,7 +26,7 @@ to brush their teeth (this project here).
 
 Or - if that sounds too conservative - I could make James Gosling, the father of Java, 
  pretend it is a lightsaber in front of thousands of developers
- at the worlds biggest Java conference - in full Darth Vader cosplay ([this project]()).
+ at the worlds biggest Java conference - in full Darth Vader cosplay.
 
 
 ## Prerequisites
