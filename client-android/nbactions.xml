@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>run</actionName>
+        <goals>
+            <goal>clean</goal>
+            <goal>package</goal>
+            <goal>android:deploy</goal>
+            <goal>android:run</goal>
+        </goals>
+        <properties>
+            <skipTests>true</skipTests>
+        </properties>
+    </action>
+    <action>
+        <actionName>debug</actionName>
+        <goals>
+            <goal>clean</goal>
+            <goal>package</goal>
+            <goal>android:deploy</goal>
+            <goal>android:run</goal>
+        </goals>
+        <properties>
+            <skipTests>true</skipTests>
+            <android.run.debug>${jpda.attach.port}</android.run.debug>
+            <jpda.attach>true</jpda.attach>
+        </properties>
+    </action>
+    <action>
+        <actionName>CUSTOM-android-run</actionName>
+        <displayName>Run in Android</displayName>
+        <goals>
+            <goal>clean</goal>
+            <goal>package</goal>
+            <goal>android:deploy</goal>
+            <goal>android:run</goal>
+        </goals>
+        <properties>
+            <skipTests>true</skipTests>
+        </properties>
+    </action>
+    <action>
+            <actionName>CUSTOM-build-with-oralb</actionName>
+            <displayName>build-with-oralb</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <oralb.appid>0b87210f-9207-4df6-8280-faaec0c22a0c</oralb.appid>
+                <oralb.appkey>3afc371f-e1e7-4f08-9037-fc24d47a88ed</oralb.appkey>
+            </properties>
+        </action>
+</actions>

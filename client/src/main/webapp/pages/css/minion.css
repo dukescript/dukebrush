@@ -1,0 +1,684 @@
+/*Copyright (c) 2016 - Anton Epple - http://codepen.io/lpi/pen/vgaJC
+
+Permission is hereby granted, free of charge, to any person 
+obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, 
+merge, publish, distribute, sublicense, and/or sell copies of 
+the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall 
+be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.*/
+
+body{
+    background-color: #000000;
+}
+
+.minion{
+    position:absolute;
+    background-color: #ffed41;
+    height: 360px;
+    width: 218px;
+    border-radius: 218px 218px 130px 130px;
+    position:absolute;
+    left:50%;
+    top:160%;
+    margin:-180px 0 0 -109px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.highPressure{
+    /*background-color#ff0000;*/
+    background-color: #987BD2;
+}
+
+.appear{
+    -webkit-animation-name: appear;
+    animation-name: appear;
+}
+
+.disappear{
+    -webkit-animation-name: disappear;
+    animation-name: disappear;
+}
+
+@-webkit-keyframes appear {
+    from {top: 160%;}
+    to {top: 50%;}
+}
+
+@keyframes appear {
+    from {top: 160%;}
+    to {top: 50%;}
+}
+
+@keyframes disappear {
+    from {top: 50%;}
+    to {top: 160%;}
+}
+
+@-webkit-keyframes disappear {
+    from {top: 50%;}
+    to {top: 160%;}
+}
+
+
+
+.glassesline1{
+    background-color: #494949;
+    border-radius: 4px;
+    height: 12px;
+    width: 238px;
+    position: relative;
+    top: 98px;
+    margin : 0 -10px;
+}
+.glassesline2{
+    background-color: #2d2d2d;
+    border-radius: 4px;
+    height: 12px;
+    width: 238px;
+    position: relative;
+    top: 98px;
+    margin : 0 -10px;
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.15);
+    box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.glass1,.glass2{
+    background-color: #e2e2e0;
+    height: 102px;
+    width: 102px;
+    border-radius: 102px;
+    position: absolute;
+    top: 55px;
+    -webkit-box-shadow: -4px 4px 0px 0px rgba(50, 50, 50, 0.15),1px -1px 0px 0px rgba(255, 255, 255, 1);
+    -moz-box-shadow:    -4px 4px 0px 0px rgba(50, 50, 50, 0.15),1px -1px 0px 0px rgba(255, 255, 255, 1);
+    box-shadow:         -4px 4px 0px 0px rgba(50, 50, 50, 0.15),1px -1px 0px 0px rgba(255, 255, 255, 1);
+}
+.glass1{
+    left: 10px;
+    right: auto;
+    z-index: 2;
+}
+.glass2{
+    right: 10px;
+    left: auto;
+    z-index: 1;
+}
+
+.glass1:before,.glass2:before{
+    background-color: #e5bf36;
+    height: 78px;
+    width: 78px;
+    border-radius: 78px;
+    display: block;
+    position: relative;
+    top: 12px;
+    left: 12px;
+    content: "";
+    /*    animation: eyes 5s linear .5s infinite ;
+        -webkit-animation: eyes 5s linear .5s infinite;
+        animation-timing-function: steps(1);
+        -webkit-animation-timing-function: steps(1);    */
+}
+
+.glass1:after,.glass2:after{
+    background-color: #FFF;
+    height: 58px;
+    width: 78px;
+    border-radius: 78px;
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    content: "";
+}
+
+.highPressure .glass1:after{
+    height: 28px;
+    top: 42px;
+}
+
+.highPressure .glass2:after{
+    animation: flicker 3s linear infinite;
+    -webkit-animation: flicker 3s linear infinite;    
+}
+
+@keyframes flicker {
+    0%, 90%{
+        height: 58px; top:22px;
+    }
+    90%, 92% { 
+        height: 58px; top:22px
+    }
+    92%, 94% { 
+        height: 54px; top:24px
+    }
+    94%, 96% { 
+         height: 58px; top:22px
+    }
+    96%, 100% { 
+        height: 54px; top:24px
+    }
+}
+
+@-webkit-keyframes flicker {
+       0%, 90%{
+        height: 58px; top:22px;
+    }
+    92%, 94% { 
+        height: 50px; top:24px
+    }
+    94%, 96% { 
+         height: 58px; top:22px
+    }
+    96%, 100% { 
+        height: 54px; top:24px
+    }
+}
+
+
+
+.eye1,.eye2{
+    background-color: #724c25;
+    height: 28px;
+    width: 28px;
+    border-radius: 28px;
+    position: absolute;
+    top: 44px;
+    z-index: 3;
+}
+.eye1{
+    left: 46px;
+}
+.eye2{
+    right: 46px;
+}
+.eye1:before,.eye2:before{
+    background-color: #2c2d2f;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    display: block;
+    position: relative;
+    top: 8px;
+    left: 8px;
+    content: "";
+}
+.eye1:after,.eye2:after{
+    background-color: #FFF;
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    content: "";
+}
+
+.highPressure .eye2, .highPressure .eye1{
+    background-color: #5f3f72;
+}
+
+.highPressure .eye2{
+    top: 48px;
+    height: 18px;
+    width: 18px;
+    border-radius: 18px;
+
+}
+
+.highPressure  .eye2:after{
+    height: 4px;
+    width: 4px;
+    border-radius: 4px;
+    left: 8px;
+    top:4px
+}
+.highPressure  .eye2:before{
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    left:4px;
+    top:4px
+}
+
+.mouth{
+    transition: all 0.5s ease;
+    background-color: #603814;
+    height: 36px;
+    width: 106px;
+    position: absolute;
+    border-radius: 0 0 106px 106px;
+    top: 182px;
+    left: 55px;
+    overflow: hidden;
+}
+.mouth:before{
+    background-color: #FFED41;
+    height: 80px;
+    width: 205px;
+    position: relative;
+    display: block;
+    border-radius: 0 0 150px 150px;
+    top:-70px;
+    left:-50px;
+    content: "";
+    z-index: 2;
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(50, 50, 50, 0.15);
+    -moz-box-shadow:    0px 3px 0px 0px rgba(50, 50, 50, 0.15);
+    box-shadow:         0px 3px 0px 0px rgba(50, 50, 50, 0.15);
+
+}
+
+.mouth.finished{
+    height: 40px;
+    width: 120px;
+    left: 48px;
+}
+
+.mouth.finished:before{
+    width: 220px;
+}
+
+.minion.highPressure .mouth:before{
+    background-color: #ff0000;
+    visibility: hidden
+}
+
+.minion.highPressure .mouth{
+    border-radius: 106px 106px 106px 106px;
+    top: 192px;
+    height: 30px;
+}
+
+.minion.highPressure .glass1:before,.minion.highPressure .glass2:before{
+    /*background-color: #ff5555;*/
+    background-color: #987BD2;
+}
+
+ul.teeth{
+    list-style: none;
+    z-index: 1;
+    position: absolute;
+    top: -11px;
+    left: -25px;
+}
+
+.minion.highPressure ul.teeth{
+    top: -16px;
+}
+
+ul.teeth li{
+    float: left;
+    height: 0px;
+    width: 20px;
+    background: #FFF;
+    display: inline-block;
+    border-radius: 0 0 15px 15px;
+}
+
+.highPressure ul.teeth li{
+    border-radius: 0 0 30px 30px;
+}
+
+ul.teeth li:first-child,ul.teeth li:last-child{
+    height:0px;
+}
+
+.upper-tooth-visible{
+    -webkit-animation-name: upper-tooth;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: upper-tooth;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes upper-tooth {
+    from {height: 0px;}
+    to {height: 15px;}
+}
+
+@keyframes upper-tooth {
+    from {height: 0px;}
+    to {height: 15px;}
+}
+
+
+ul.teeth2{
+    list-style: none;
+    position: absolute;
+    top: 10px;
+    left: -25px;
+}
+
+ul.teeth2 li{
+    float: left;
+    height: 15px;
+    width: 20px;
+    background: #FFF;
+    display: inline-block;
+    border-radius: 15px 15px 0 0 ;
+    margin-top: 15px;
+
+}
+
+ul.teeth2 li:first-child,ul.teeth2 li:last-child{
+    height:15px;
+}
+
+.highPressure ul.teeth2{
+    top: 2px;
+}
+
+.mouth.finished  ul.teeth2, .mouth.finished  ul.teeth{
+    left: -18px;
+}
+
+.lower-tooth-visible{
+    -webkit-animation-name: lower-tooth;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: lower-tooth;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+    margin-top: 15px;
+}
+
+@-webkit-keyframes lower-tooth {
+    from {margin-top: 15px;}
+    to {margin-top: 0px;}
+}
+
+@keyframes lower-tooth {
+    from {margin-top: 15px;}
+    to {margin-top: 0px;}
+}
+
+.pants{
+    background-color: #2b5b89;
+    height: 66px;
+    position: relative;
+    top: 270px;
+    border-radius: 0 0 128px 128px;
+    z-index: 2;
+}
+.pants:before{
+    background-color: #2b5b89;
+    height: 58px;
+    width: 138px;
+    display: block;
+    position: relative;
+    top: -58px;
+    margin:0 auto;
+    content: "";
+}
+.pants:after{
+    background-color: #224467;
+    height: 44px;
+    width: 58px;
+    display: block;
+    position: relative;
+    top: -76px;
+    border-radius: 0 0 58px 58px;
+    margin:0 auto;
+    content: "";
+}
+.belt-left,.belt-right{
+    background-color: #224467;
+    height: 16px;
+    width: 70px;
+    position: absolute;
+    top:225px;
+    z-index: 3;
+}
+
+.highPressure .pants, .highPressure .pants:before{
+    background-color: #494949;
+}
+
+.highPressure .pants:after{
+    background-color: #383838;
+}
+.belt-left{
+    left:-10px;
+    transform: scale(1) rotate(24deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}
+.belt-right{
+    right:-10px;
+    transform: scale(1) rotate(-28deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}
+.belt-left:after,.belt-right:after{
+    background-color: #2d2d2b;
+    height: 11px;
+    width: 11px;
+    border-radius: 11px;
+    position: absolute;
+    content: "";
+}
+.belt-left:after{
+    left: 56px;
+    top: 3px;
+}
+.belt-right:after{
+    right: 57px;
+    top: 3px;
+}
+
+.highPressure .belt-right, .highPressure .belt-left{
+    background-color: #424242;
+}
+
+.highPressure .belt-right{
+    right:-10px;
+    transform: scale(1) rotate(-20deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}
+
+
+
+.legs .left,.legs .right{
+    background: #224467;
+    height: 22px;
+    width: 44px;
+    position: absolute;
+    top: 358px;
+    z-index: 1;
+}
+
+.highPressure .legs .left,.highPressure .legs .right{
+        background: #494949;
+}
+
+.legs .left{
+    left:60px;
+}
+.legs .right{
+    right:60px;
+}
+.legs .left:after{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-bottom: 22px solid #EC7E65;
+    border-right: 10px solid transparent;
+}
+.legs .right:after{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-bottom: 22px solid #EC7E65;
+    border-left: 10px solid transparent;
+    right: 0;
+}
+
+.highPressure .legs .left:after,.highPressure .legs .right:after{
+    border-bottom: 22px solid #336600;
+
+}
+
+.shoe-l,.shoe-r{
+    background-color: #424242;
+    width: 52px;
+    height: 18px;
+    position: absolute;
+    top: 380px;
+}
+.shoe-l{
+    left: 50px;
+    border-radius: 18px 0 0 0;
+}
+.shoe-r{
+    right: 50px;
+    border-radius: 0 18px 0 0;
+}
+.shoe-l:after,.shoe-r:after{
+    background-color: #2d2d2d;
+    width: 56px;
+    height: 5px;
+    position: absolute;
+    content: "";
+    top: 18px;
+    left: -2px;
+}
+.shoe-l:before{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-top: 5px solid #224467;
+    border-left: 34px solid transparent;
+    left: 20px;
+}
+.shoe-r:before{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-top: 5px solid #224467;
+    border-right: 34px solid transparent;
+    right: 20px;
+}
+
+.minion.highPressure .hands .left,.minion.highPressure .hands .right{
+    /*background-color: #ff5555;*/
+    background-color: #5f3f72;
+    height: 100px;
+    width: 16px;
+    position:absolute;
+    top: 242px;
+}
+.hands .left,.hands .right{
+    background-color: #e5c034;
+    height: 100px;
+    width: 16px;
+    position:absolute;
+    top: 242px;
+}
+.hands .left{
+    left: -16px;
+    border-radius: 16px 0 0 0;
+}
+.hands .right{
+    right: -16px;
+    border-radius: 0 16px 0 0;
+}
+.hands .fingers-l,.hands .fingers-r{
+    background-color: #424242;
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    top: 350px;
+    z-index: 1;
+}
+.hands .fingers-l{
+    left:-6px;
+    border-radius: 0 16px 0 0;
+}
+.hands .fingers-r{
+    right:-6px;
+    border-radius: 16px 0  0 0;
+}
+.hands .fingers-l:after,.hands .fingers-r:after{
+    background-color: #383838;
+    height: 16px;
+    width: 16px;
+    content: "";
+    border-radius: 16px;
+    position: absolute;
+    top: 15px;
+    z-index: 2;
+}
+.hands .fingers-l:after{
+    left: 0px;
+}
+.hands .fingers-r:after{
+    right: 0px;
+}
+.hands .fingers-l:before,.hands .fingers-r:before{
+    background-color: #2c2c2c;
+    height: 16px;
+    width: 16px;
+    content: "";
+    border-radius: 16px;
+    position: absolute;
+    top: 8px;
+    z-index: 1;
+}
+.hands .fingers-l:before{
+    left: 5px;
+}
+.hands .fingers-r:before{
+    right: 5px;
+}
+.hands .glove-l,.hands .glove-r{
+    background-color: #424242;
+    position: absolute;
+    height: 36px;
+    width: 16px;
+    border-radius: 0 0 16px 16px;
+    top: 342px;
+    z-index: 3;
+}
+.hands .glove-l{
+    left: -15px;
+}
+.hands .glove-r{
+    right: -15px;
+}
+.hands .glove-l:before,.hands .glove-r:before{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    top: -15px;
+    border-bottom: 30px solid #424242;
+    border-left: 30px solid transparent;
+    transform: scale(1) rotate(45deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}
+.hands .glove-l:before{
+    left:-7px;
+}
+.hands .glove-r:before{
+    right:-7px;
+}
+
+/* Animations */
+/* Coming soon */

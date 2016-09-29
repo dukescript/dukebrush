@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+<body style="background: #000000" data-bind="style: { color: highPressure()? '#ff0000': '#ffffff'}">
+    <div data-bind="visible: running" >   
+        <h1><span data-bind="text: timeAsSeconds"></span></h1>
+        <div >Sector <span data-bind="text: sector"></span></div>
+        <div >Battery <span data-bind="text: battery"></span></div>
+        <div >Mode <span data-bind="text: mode"></span></div>
+        <div >State <span data-bind="text: state"></span></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+
+Copyright (c) 2016 - Anton Epple - http://codepen.io/lpi/pen/vgaJC
+
+Permission is hereby granted, free of charge, to any person 
+obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, 
+merge, publish, distribute, sublicense, and/or sell copies of 
+the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall 
+be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/minion.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="wrapper" >
+            <div class="minion" data-bind="css: {appear: running, disappear: !running(), highPressure: highPressure}">
+                <div class="hands">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="fingers-l"></div>
+                    <div class="fingers-r"></div>
+                    <div class="glove-l"></div>
+                    <div class="glove-r"></div>   
+                </div>
+                <div class="glasses">
+                    <div class="glassesline1"></div>
+                    <div class="glassesline2"></div>
+                    <div class="glass1">
+                        <div class="eye1"></div>
+                    </div>
+                    <div class="glass2">
+                        <div class="eye2"></div>
+                    </div>
+                </div>
+                <div class="mouth" data-bind="css: {highPressure: highPressure, finished: timeAsSeconds()>120}">
+                    <ul class="teeth">
+                        <li data-bind="css:{ 'upper-tooth-visible': timeAsSeconds()>0}"></li>
+                        <li data-bind="css:{ 'upper-tooth-visible': timeAsSeconds()>15}"></li>
+                        <li data-bind="css:{ 'upper-tooth-visible': timeAsSeconds()>30}"></li>
+                        <li data-bind="css:{ 'upper-tooth-visible': timeAsSeconds()>45}"></li>
+                    </ul>
+                    <ul class="teeth2">
+                        <li data-bind="css:{ 'lower-tooth-visible': timeAsSeconds()>60}"></li>
+                        <li data-bind="css:{ 'lower-tooth-visible': timeAsSeconds()>75}"></li>
+                        <li data-bind="css:{ 'lower-tooth-visible': timeAsSeconds()>90}"></li>
+                        <li data-bind="css:{ 'lower-tooth-visible': timeAsSeconds()>105}"></li>
+                    </ul>
+                </div>
+                <div class="belt-left"></div>
+                <div class="belt-right"></div>
+                <div class="pants"></div>
+
+                <div class="legs">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="shoe-l"></div>
+                    <div class="shoe-r"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

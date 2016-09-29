@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.dukescript.dukebrush"
+          android:versionCode="1"
+          android:versionName="1.0-SNAPSHOT" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" 
+        tools:overrideLibrary="com.oralb.sdk"/>  
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="dukebrush"
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+
+        <activity android:name="com.oralb.sdk.OBTActivity"  
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar" 
+                  android:label="@string/app_name" />
+        
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+        <activity android:name="com.dukescript.dukebrush.AndroidMain3"
+                  android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity android:name="com.dukescript.presenters.Android" 
+                  android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Configuration section. Defines: 
+           - the HTML page to load on start
+           - the class that contains the main initialization method
+           - name of the initialization method in the given class
+        -->
+        <meta-data android:name="com.obt.sdk.ApplicationId" android:value="${oralb.appid}"/> 
+        <meta-data android:name="com.obt.sdk.ApplicationKey" android:value="${oralb.appkey}"/>
+
+        <meta-data android:name="loadPage" android:value="file:///android_asset/pages/minion.html" />
+        <meta-data android:name="loadClass" android:value="com.dukescript.dukebrush.AndroidMain3" />
+        <meta-data android:name="invoke" android:value="main" />
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>
