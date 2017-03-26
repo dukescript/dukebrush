@@ -47,18 +47,27 @@ public class AndroidMain1 extends Activity {
 
             @Override
             public void onBluetoothError() {
+                System.out.println(
+                        "############## Bluetooth error");
+
             }
 
             @Override
             public void onBrushDisconnected() {
+                 System.out.println(
+                        "############## onBrushDisconnected");
             }
 
             @Override
             public void onBrushConnected() {
+                 System.out.println(
+                        "############## onBrushConnected");
             }
 
             @Override
             public void onBrushConnecting() {
+                System.out.println(
+                        "############## onBrushConnecting");
             }
 
             @Override
@@ -94,12 +103,15 @@ public class AndroidMain1 extends Activity {
         OBTSDK.authorizeSdk(new OBTSdkAuthorizationListener() {
             @Override
             public void onSdkAuthorizationSuccess() {
+                System.out.println("################ Authorization succeeded");
+
                 OBTSDK.setOBTBrushListener(listener);
                 OBTSDK.startScanning();
             }
 
             @Override
             public void onSdkAuthorizationFailed(int i) {
+                System.out.println("################ Authorization failed "+i);
             }
         });
     }

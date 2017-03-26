@@ -12,10 +12,10 @@ import com.oralb.sdk.OBTBrushListener;
 import com.oralb.sdk.OBTSdkAuthorizationListener;
 import java.util.List;
 
-public class AndroidMain3 extends Activity implements MqttEventListener {
+public class AndroidMain3 extends Activity {//implements MqttEventListener {
 
     private PowerManager powerManager;
-    private MqttManager mqttManager;
+//    private MqttManager mqttManager;
 
     public AndroidMain3() {
 
@@ -29,8 +29,8 @@ public class AndroidMain3 extends Activity implements MqttEventListener {
     }
 
     public void doStuffWithToothBrush() {
-        initPowerManager();
-        initMqttManager();
+//        initPowerManager();
+//        initMqttManager();
         try {
             OBTSDK.initialize(this);
         } catch (PackageManager.NameNotFoundException e) {
@@ -130,12 +130,12 @@ public class AndroidMain3 extends Activity implements MqttEventListener {
             }
 
             private void sendMessage() {
-                publishBrushData(handleId,
-                        DataModel.ui.getTime(),
-                        DataModel.ui.isRunning(),
-                        DataModel.ui.isHighPressure(),
-                        DataModel.ui.getSector(),
-                        DataModel.ui.getBattery());
+//                publishBrushData(handleId,
+//                        DataModel.ui.getTime(),
+//                        DataModel.ui.isRunning(),
+//                        DataModel.ui.isHighPressure(),
+//                        DataModel.ui.getSector(),
+//                        DataModel.ui.getBattery());
             }
         };
 
@@ -170,51 +170,51 @@ public class AndroidMain3 extends Activity implements MqttEventListener {
     }
 
     // ******************** Initialization ************************************
-    private void initPowerManager() {
-        powerManager = (PowerManager) getSystemService(POWER_SERVICE);
-    }
+//    private void initPowerManager() {
+//        powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+//    }
 
-    private void initMqttManager() {
-        mqttManager = new MqttManager();
-        mqttManager.connectToBroker();
-        mqttManager.setOnMessageReceived(this);
-    }
+//    private void initMqttManager() {
+//        mqttManager = new MqttManager();
+//        mqttManager.connectToBroker();
+//        mqttManager.setOnMessageReceived(this);
+//    }
 
     // ******************** MQTT related **************************************
-    @Override
-    public void onMqttEvent(final MqttEvent EVENT) {
-        final String TOPIC = EVENT.TOPIC;
-        final String MQTT_MESSAGE = EVENT.MESSAGE.toString();
-        if (MQTT_MESSAGE.isEmpty()) {
-            return;
-        }
+//    @Override
+//    public void onMqttEvent(final MqttEvent EVENT) {
+//        final String TOPIC = EVENT.TOPIC;
+//        final String MQTT_MESSAGE = EVENT.MESSAGE.toString();
+//        if (MQTT_MESSAGE.isEmpty()) {
+//            return;
+//        }
     }
 
     // ******************** Methods *******************************************
-    public void publishBrushData(final long ID,
-            final long TIME,
-            final boolean ONLINE,
-            final boolean HIGH_PRESSURE,
-            final int SECTOR,
-            final float BATTERY_LEVEL) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // Info from Brush as JSON
-                StringBuilder brushInfo = new StringBuilder();
-                brushInfo.append("{\n")
-                        .append("  \"id\":\"").append(ID).append("\",\n")
-                        .append("  \"online\":").append(ONLINE).append(",\n")
-                        .append("  \"time\":\"").append(TIME).append("\",\n")
-                        .append("  \"sector\":\"").append(SECTOR).append("\",\n")
-                        .append("  \"highPressure\":\"").append(HIGH_PRESSURE).append("\",\n")
-                        .append("  \"battery\":").append(BATTERY_LEVEL).append("\n")
-                        .append("}");
+//    public void publishBrushData(final long ID,
+//            final long TIME,
+//            final boolean ONLINE,
+//            final boolean HIGH_PRESSURE,
+//            final int SECTOR,
+//            final float BATTERY_LEVEL) {
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                // Info from Brush as JSON
+//                StringBuilder brushInfo = new StringBuilder();
+//                brushInfo.append("{\n")
+//                        .append("  \"id\":\"").append(ID).append("\",\n")
+//                        .append("  \"online\":").append(ONLINE).append(",\n")
+//                        .append("  \"time\":\"").append(TIME).append("\",\n")
+//                        .append("  \"sector\":\"").append(SECTOR).append("\",\n")
+//                        .append("  \"highPressure\":\"").append(HIGH_PRESSURE).append("\",\n")
+//                        .append("  \"battery\":").append(BATTERY_LEVEL).append("\n")
+//                        .append("}");
+//
+//                mqttManager.publish(MqttManager.QOS_0, MqttManager.NOT_RETAINED, MqttManager.BRUSH_TOPIC + "/" + MqttManager.CLIENT_ID, brushInfo.toString());
+//
+//            }
+//        }).start();
+    
 
-                mqttManager.publish(MqttManager.QOS_0, MqttManager.NOT_RETAINED, MqttManager.BRUSH_TOPIC + "/" + MqttManager.CLIENT_ID, brushInfo.toString());
 
-            }
-        }).start();
-    }
-
-}

@@ -35,7 +35,7 @@ public void doStuffWithToothBrush() {
 
         @Override
         public void onSdkAuthorizationFailed(int i) {
-            System.out.println("####################onSdkAuthorizationFailed");
+            System.out.println("####################onSdkAuthorizationFailed "+i);
         }
     });
 }
