@@ -302,7 +302,7 @@
             <groupId>com.obt</groupId>
             <artifactId>sdk</artifactId>
             <version>1.0.1</version>
-            <type>aar</type>
+            <type>jar</type>
         </dependency>
     </dependencies>
     <repositories>
