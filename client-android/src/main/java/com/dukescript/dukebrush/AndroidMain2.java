@@ -13,13 +13,14 @@ import java.util.List;
 
 public class AndroidMain2 extends Activity {
 
-    public AndroidMain2() {}
+    public AndroidMain2() {
+    }
 
-public static void main(String... args) throws Exception {
-    DataModel.onPageLoad();
-    DataModel.ui.setRunning(false);
-    OBTSDK.startScanning();
-}
+    public static void main(String... args) throws Exception {
+        DataModel.onPageLoad();
+        DataModel.ui.setRunning(false);
+        OBTSDK.startScanning();
+    }
 
     public void doStuffWithToothBrush() {
         try {
@@ -63,26 +64,26 @@ public static void main(String... args) throws Exception {
                 System.out.println("onBluetoothError");
             }
 
-@Override
-public void onBrushDisconnected() {
-    DataModel.ui.setRunning(false);
-}
+            @Override
+            public void onBrushDisconnected() {
+                DataModel.ui.setRunning(false);
+            }
 
-@Override
-public void onBrushConnected() {
-    DataModel.ui.setRunning(true);
-}
+            @Override
+            public void onBrushConnected() {
+                DataModel.ui.setRunning(true);
+            }
 
-
-@Override
-public void onBrushingTimeChanged(long l) {
-    DataModel.ui.setTime(l);
-}
+            @Override
+            public void onBrushingTimeChanged(long l) {
+                DataModel.ui.setTime(l);
+            }
 
             @Override
             public void onBrushConnecting() {
 
             }
+
             @Override
             public void onBrushingModeChanged(int i) {
                 DataModel.ui.setMode(i);

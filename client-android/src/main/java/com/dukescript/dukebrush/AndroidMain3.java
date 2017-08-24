@@ -24,7 +24,6 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
     public static void main(String... args) throws Exception {
         DataModel.onPageLoad();
         DataModel.ui.setRunning(false);
-        OBTSDK.startScanning();
 
     }
 
@@ -32,8 +31,10 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
 //        initPowerManager();
 //        initMqttManager();
         try {
+            System.out.println("1#######################################");
             OBTSDK.initialize(this);
         } catch (PackageManager.NameNotFoundException e) {
+            System.out.println("2#######################################");
             e.printStackTrace();
         }
         final OBTBrushListener listener = new OBTBrushListener() {
@@ -41,6 +42,7 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
 
             @Override
             public void onNearbyBrushesFoundOrUpdated(List<OBTBrush> list) {
+            System.out.println("3#######################################");
                 if (list.size() > 0) {
 
                     DataModel.ui.setRunning(true);
@@ -71,16 +73,19 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
             @Override
             public void onBluetoothError() {
                 System.out.println("onBluetoothError");
+            System.out.println("4#######################################");
             }
 
             @Override
             public void onBrushDisconnected() {
+            System.out.println("5#######################################");
                 DataModel.ui.setRunning(false);
                 sendMessage();
             }
 
             @Override
             public void onBrushConnected() {
+            System.out.println("6#######################################");
                 DataModel.ui.setRunning(true);
                 sendMessage();
 
@@ -88,22 +93,26 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
 
             @Override
             public void onBrushConnecting() {
+            System.out.println("7#######################################");
 
             }
 
             @Override
             public void onBrushingTimeChanged(long l) {
+            System.out.println("8#######################################");
                 DataModel.ui.setTime(l);
                 sendMessage();
             }
 
             @Override
             public void onBrushingModeChanged(int i) {
+            System.out.println("9#######################################");
                 DataModel.ui.setMode(i);
             }
 
             @Override
             public void onBrushStateChanged(int i) {
+            System.out.println("10#######################################");
                 DataModel.ui.setState(i);
             }
 
@@ -142,12 +151,15 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
         OBTSDK.authorizeSdk(new OBTSdkAuthorizationListener() {
             @Override
             public void onSdkAuthorizationSuccess() {
+            System.out.println("11#######################################");
                 System.out.println("####################OBTSDK autorized");
                 OBTSDK.setOBTBrushListener(listener);
+                OBTSDK.startScanning();
             }
 
             @Override
             public void onSdkAuthorizationFailed(int i) {
+            System.out.println("12#######################################");
                 System.out.println("####################onSdkAuthorizationFailed");
 
             }
@@ -159,6 +171,7 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        System.out.println("0#######################################");
         doStuffWithToothBrush();
         try {
             // delegate to original activity
@@ -173,13 +186,11 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
 //    private void initPowerManager() {
 //        powerManager = (PowerManager) getSystemService(POWER_SERVICE);
 //    }
-
 //    private void initMqttManager() {
 //        mqttManager = new MqttManager();
 //        mqttManager.connectToBroker();
 //        mqttManager.setOnMessageReceived(this);
 //    }
-
     // ******************** MQTT related **************************************
 //    @Override
 //    public void onMqttEvent(final MqttEvent EVENT) {
@@ -188,9 +199,9 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
 //        if (MQTT_MESSAGE.isEmpty()) {
 //            return;
 //        }
-    }
+}
 
-    // ******************** Methods *******************************************
+// ******************** Methods *******************************************
 //    public void publishBrushData(final long ID,
 //            final long TIME,
 //            final boolean ONLINE,
@@ -215,6 +226,4 @@ public class AndroidMain3 extends Activity {//implements MqttEventListener {
 //
 //            }
 //        }).start();
-    
-
 

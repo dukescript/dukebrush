@@ -18,10 +18,8 @@
 
         <activity android:name="com.oralb.sdk.OBTActivity"  
                   android:theme="@android:style/Theme.Translucent.NoTitleBar" 
-                  android:label="@string/app_name" />
+                  android:label="OralB" />
         
-        <!--<service android:name="org.eclipse.paho.android.service.MqttService" />-->
-
         <activity android:name="com.dukescript.dukebrush.AndroidMain3"
                   android:configChanges="orientation|screenSize">
             <intent-filter>
@@ -30,13 +28,8 @@
             </intent-filter>
         </activity>
         
-        
         <activity android:name="com.dukescript.presenters.Android" 
                   android:configChanges="orientation|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <!-- Configuration section. Defines: 
@@ -47,12 +40,13 @@
         <meta-data android:name="com.obt.sdk.ApplicationId" android:value="0b87210f-9207-4df6-8280-faaec0c22a0c"/> 
         <meta-data android:name="com.obt.sdk.ApplicationKey" android:value="3afc371f-e1e7-4f08-9037-fc24d47a88ed"/>
 
+        <!--<meta-data android:name="loadPage" android:value="file:///android_asset/pages/index.html" />-->
         <meta-data android:name="loadPage" android:value="file:///android_asset/pages/minion.html" />
         <meta-data android:name="loadClass" android:value="com.dukescript.dukebrush.AndroidMain3" />
         <meta-data android:name="invoke" android:value="main" />
-
+        
     </application>
-
+    
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>

@@ -15,33 +15,36 @@ public class AndroidMain extends Activity {
 
     public static void main(String... args) throws Exception {
         DataModel.onPageLoad();
-//        DataModel.ui.setRunning(false);
-//        OBTSDK.startScanning();
+        System.out.println("####################main");
+
     }
 
-public void doStuffWithToothBrush() {
-    try {
-        OBTSDK.initialize(this);
-        System.out.println("####################OBTSDK autorized");
+    public void doStuffWithToothBrush() {
+        System.out.println("####################doStuffWithToothBrush");
+        try {
+            OBTSDK.initialize(this);
+            System.out.println("####################OBTSDK initialized");
 
-    } catch (PackageManager.NameNotFoundException e) {
-        e.printStackTrace();
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        OBTSDK.authorizeSdk(new OBTSdkAuthorizationListener() {
+            @Override
+            public void onSdkAuthorizationSuccess() {
+                System.out.println("####################OBTSDK authorized");
+            }
+
+            @Override
+            public void onSdkAuthorizationFailed(int i) {
+                System.out.println("####################onSdkAuthorizationFailed " + i);
+            }
+        });
     }
-    OBTSDK.authorizeSdk(new OBTSdkAuthorizationListener() {
-        @Override
-        public void onSdkAuthorizationSuccess() {
-            System.out.println("####################OBTSDK autorized");
-        }
-
-        @Override
-        public void onSdkAuthorizationFailed(int i) {
-            System.out.println("####################onSdkAuthorizationFailed "+i);
-        }
-    });
-}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("####################onCreate");
+
         super.onCreate(savedInstanceState);
 
         doStuffWithToothBrush();

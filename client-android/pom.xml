@@ -301,8 +301,15 @@
         <dependency>
             <groupId>com.obt</groupId>
             <artifactId>sdk</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
+            <type>aar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.obt</groupId>
+            <artifactId>sdk</artifactId>
+            <version>1.0.3</version>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <repositories>
