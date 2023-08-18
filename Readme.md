@@ -1,3 +1,9 @@
+# Deprecated
+
+Apparently Oral-B has removed their API. Keeping this repo up for historical reasons and because tere are some crazy CSS tricks to animate a Minion. 
+
+
+
 # DukeBrush
 
 This demo project shows how you can use native libraries in a DukeScript application for Android.
